@@ -2,7 +2,7 @@
 
 export default function Home() {
   const handleLoginGithub = () => {
-    const githubAuthUrl = "https://github.com/login/oauth/authorize";
+    const githubAuthUrl = process.env.NEXT_PUBLIC_GITHUB_AUTH_URL;
     const clientId = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID;
     const redirectUri = `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/oauth2/code/github`;
     const scope = "user";
@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   const handleLoginGoogle = () => {
-    const googleAuthUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+    const googleAuthUrl = process.env.NEXT_PUBLIC_GOOGLE_AUTH_URL;
     const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
     const redirectUri = `${process.env.NEXT_PUBLIC_BACKEND_URL}/login/oauth2/code/google`;
     const scope = "openid email profile";
