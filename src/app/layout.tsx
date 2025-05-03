@@ -1,8 +1,8 @@
-// /app/layout.tsx
 import './globals.css';
 import React from 'react';
 import Layout from '@/components/LayoutComponent'; 
 import Navbar from '@/components/Navbar';
+import { UserProvider } from '@/contexts/UserContext';
 
 export const metadata = {
   title: 'Threat-Intelligence-Collection',
@@ -35,9 +35,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body >
-        <Navbar />
-        <Layout>{children}</Layout>
+      <body>
+        <UserProvider>
+          <Layout>
+            <Navbar />
+            {children}
+          </Layout>
+        </UserProvider>
       </body>
     </html>
   );

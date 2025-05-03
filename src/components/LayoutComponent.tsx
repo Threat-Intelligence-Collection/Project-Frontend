@@ -7,8 +7,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="w-full flex-grow">
         {children}
       </div>
-      <footer className="text-center mt-auto p-2 bg-gray-300">
-        <p className="text-gray-800">
+      <footer className="text-center mt-auto p-2 bg-red-800">
+        <p className="text-white">
           © {new Date().getFullYear()} Threat-Intelligence-Collection. All rights reserved. by CPE 65 - GROUP 9
         </p>
       </footer>
